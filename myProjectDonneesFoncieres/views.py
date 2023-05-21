@@ -122,6 +122,26 @@ def prix_m2_region_mois(request):
 def transactions_mois(request):
     return render(request, "evolution/transactions_mois.html")
 
+def Prixm2Annee5ans(request):
+    return render(request, "evolution/Prixm2Annee5ans.html")
 
+def Prixm2moyen5ans(request):
+    return render(request, "evolution/Prixm2moyen5ans.html")
+
+def Prixm2region5ans(request):
+    return render(request, "evolution/Prixm2region5ans.html")
+
+def Prixm2RegionEtAnnee5ans(request):
+    return render(request, "evolution/Prixm2RegionEtAnnee5ans.html")
+
+def TransactionRegion5ans(request):
+    return render(request, "evolution/TransactionRegion5ans.html")
 
 #graphique externe
+
+def Nombres_Habitants_externe(request):
+    return render(request, "externe/Nombres_Habitants_externe.html")
+
+def Pourcentage_Transaction_externe(request):
+    return render(request, "externe/Pourcentage_Transaction_externe.html")
+

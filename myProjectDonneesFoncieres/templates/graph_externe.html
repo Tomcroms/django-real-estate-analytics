@@ -87,6 +87,18 @@
             </div>
         </section>
         <section class="graph_container">
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_externe_1' %}';">
+                <h6>Données externes : nombres d'habitants par département</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_externe_2' %}';">
+                <h6>Données externes : nombre de transactions par habitant, par département</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
         </section>
     </main>
 </body>

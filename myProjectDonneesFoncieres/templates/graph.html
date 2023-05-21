@@ -29,7 +29,7 @@
         </div>
         <div class="start_btn start_btn2 bg1" id="start_btn">
             <div class="graph_container graph_container2" id="graph_container"> 
-                <div class="graph_type" onclick="userWantsOverview()" id="overview">
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_overview' %}';" id="overview">
                     <h5>Overview</h5>
                     <div class="graph_type_map">
                         <img class="img_map" src="../static/img/francePNG.png" alt="map">
@@ -37,7 +37,7 @@
                     </div>
   
                 </div>
-                <div class="graph_type" onclick="userWantsType()" id="type">
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_type' %}';" id="type">
                     <h5>Par type de bien</h5>
                     <div class="graph_type_map">
                         <img class="img_map" src="../static/img/francePNG.png" alt="map">
@@ -48,22 +48,22 @@
                         </div>
                     </div>   
                 </div> 
-                <div class="graph_type" onclick="userWantsMutation()" id="mutation">
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_mutation' %}';" id="mutation">
                     <h5>Par type de mutation</h5>
                     <div class="graph_type_map">
                         <img class="img_map" src="../static/img/francePNG.png" alt="map">
                         <img class="img" src="../static/img/transactionPNG.png" alt="data">
                     </div>  
                 </div> 
-                <div class="graph_type" onclick="userWantsEvolution()" id="evolution">
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_evolution' %}';" id="evolution">
                     <h5>Evolution dans le temps</h5>
                     <div class="graph_type_map">
                         <img class="img_map" src="../static/img/francePNG.png" alt="map">
                         <img class="img" src="../static/img/fleche.png" alt="data">
                     </div>   
                 </div>
-                <div class="graph_type" onclick="userWantsCovid()" id="covid">
-                    <h5>Impact du covid</h5>
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_externe' %}';" id="covid">
+                    <h5>Données externes</h5>
                     <div class="graph_type_map">
                         <img class="img_map" src="../static/img/francePNG.png" alt="map">
                         <img class="img" src="../static/img/masquePNG.png" alt="data">

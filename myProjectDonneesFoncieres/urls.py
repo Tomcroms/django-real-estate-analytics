@@ -71,6 +71,15 @@ urlpatterns = [
     #graph de type evolution
     path("graph/evolution/1", views.prix_m2_region_mois, name="graph_evolution_1"),
     path("graph/evolution/2", views.transactions_mois, name="graph_evolution_2"),
+    path("graph/evolution/3", views.Prixm2Annee5ans, name="graph_evolution_3"),
+    path("graph/evolution/4", views.Prixm2moyen5ans, name="graph_evolution_4"),
+    path("graph/evolution/5", views.Prixm2region5ans, name="graph_evolution_5"),
+    path("graph/evolution/6", views.Prixm2RegionEtAnnee5ans, name="graph_evolution_6"),
+    path("graph/evolution/7", views.TransactionRegion5ans, name="graph_evolution_7"),
+
+    #graph de type externe
+    path("graph/externe/1", views.Nombres_Habitants_externe, name="graph_externe_1"),
+    path("graph/externe/2", views.Pourcentage_Transaction_externe, name="graph_externe_2"),
 
     #default
     path("adminn/", admin.site.urls),

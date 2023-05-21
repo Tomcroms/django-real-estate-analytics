@@ -99,6 +99,36 @@
                     <img class="img_histogram" src="{% static 'img/histogram.png' %}" alt="graph">
                 </div>
             </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_evolution_3' %}';">
+                <h6>Valeur moyenne du m2 par an sur 5 ans</h6>
+                <div class="graph_img">
+                    <img class="img_graph" src="{% static 'img/graph_line.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_evolution_4' %}';">
+                <h6>Evolution du prix au m2 moyen sur 5 ans par type de local</h6>
+                <div class="graph_img">
+                    <img class="img_graph" src="{% static 'img/graph_line.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_evolution_5' %}';">
+                <h6>Evolution du prix au m2 moyen sur 5 ans par région</h6>
+                <div class="graph_img">
+                    <img class="img_graph" src="{% static 'img/graph_line.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_evolution_6' %}';">
+                <h6>Prix au m2 moyen par région, par an</h6>
+                <div class="graph_img">
+                    <img class="img_histogram" src="{% static 'img/histogram.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_evolution_7' %}';">
+                <h6>Nombre de transactions par région, par année</h6>
+                <div class="graph_img">
+                    <img class="img_histogram" src="{% static 'img/histogram.png' %}" alt="graph">
+                </div>
+            </div>
         </section>
     </main>
 </body>
