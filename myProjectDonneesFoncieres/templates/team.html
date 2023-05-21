@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+    <title>Accueil</title>
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__left">
+            <img src="../static/img/logoMap.png" alt="logo">
+            <h3 class="logoTxt">Projet final django</h3>
+        </div>
+        <div class="header__right">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'notebook' %}">Notebook</a>
+            <a href="{% url 'graph' %}">Graph</a>
+            <a href="{% url 'team' %}">Team</a>
+        </div>
+    </header>
+    <main class="main">
+        <div class="index_title" id="index_title">
+            <h1 class="h1Team">Paul Lacoutiere</h1>
+            <h1 class="h1Team">Tiphaine Kachkachi</h1>
+            <h1 class="h1Team">Thomas Laumonier</h1>
+        </div>
+    </main>
+</body>
+</html>

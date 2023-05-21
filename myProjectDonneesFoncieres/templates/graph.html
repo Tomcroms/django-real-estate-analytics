@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+    <title>Accueil</title>
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__left">
+            <img src="../static/img/logoMap.png" alt="logo">
+            <h3 class="logoTxt">Projet final django</h3>
+        </div>
+        <div class="header__right">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'notebook' %}">Notebook</a>
+            <a href="{% url 'graph' %}">Graph</a>
+            <a href="{% url 'team' %}">Team</a>
+        </div>
+    </header>
+    <main class="main">
+        <div id="second_title">
+            <h4>Quel type de données souhaitez vous visualisez</h4>
+        </div>
+        <div class="start_btn start_btn2 bg1" id="start_btn">
+            <div class="graph_container graph_container2" id="graph_container"> 
+                <div class="graph_type" onclick="userWantsOverview()" id="overview">
+                    <h5>Overview</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="../static/img/francePNG.png" alt="map">
+                        <img class="img" src="../static/img/data.png" alt="data"> 
+                    </div>
+  
+                </div>
+                <div class="graph_type" onclick="userWantsType()" id="type">
+                    <h5>Par type de bien</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="../static/img/francePNG.png" alt="map">
+                        <div class="flex_align_center">
+                            <img class="imgFlex" src="../static/img/maisonPNG.png" alt="house">
+                            <div class="tilted_line"></div>
+                            <img class="imgFlex" src="../static/img/immeublePNG.png" alt="appartment">
+                        </div>
+                    </div>   
+                </div> 
+                <div class="graph_type" onclick="userWantsMutation()" id="mutation">
+                    <h5>Par type de mutation</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="../static/img/francePNG.png" alt="map">
+                        <img class="img" src="../static/img/transactionPNG.png" alt="data">
+                    </div>  
+                </div> 
+                <div class="graph_type" onclick="userWantsEvolution()" id="evolution">
+                    <h5>Evolution dans le temps</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="../static/img/francePNG.png" alt="map">
+                        <img class="img" src="../static/img/fleche.png" alt="data">
+                    </div>   
+                </div>
+                <div class="graph_type" onclick="userWantsCovid()" id="covid">
+                    <h5>Impact du covid</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="../static/img/francePNG.png" alt="map">
+                        <img class="img" src="../static/img/masquePNG.png" alt="data">
+                    </div>   
+                </div>   
+            </div>
+        </div>
+    </main>
+</body>
+</html>

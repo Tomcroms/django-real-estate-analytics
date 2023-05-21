@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/graph.css' %}">
+    <script src="{% static 'js/graph.js' %}"></script>
+    <title>Accueil</title>
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__left">
+            <img src="{% static 'img/logoMap.png' %}" alt="logo">
+            <h3 class="logoTxt">Projet final django</h3>
+        </div>
+        <div class="header__right">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'notebook' %}">Notebook</a>
+            <a href="{% url 'graph' %}">Graph</a>
+            <a href="{% url 'team' %}">Team</a>
+            <div class="line"></div>
+        </div>
+    </header>
+    <main class="main">
+        <section class="graph_selection bg1">
+            <div class="graph_container graph_container2 graph_containeurHide" id="graph_containeurHide"> 
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_overview' %}';" id="overview">
+                    <h5>Overview</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="{% static 'img/francePNG.png' %}" alt="map">
+                        <img class="img" src="{% static 'img/data.png' %}" alt="data"> 
+                    </div>
+  
+                </div>
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_type' %}';" id="type">
+                    <h5>Par type de bien</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="{% static 'img/francePNG.png' %}" alt="map">
+                        <div class="flex_align_center">
+                            <img class="imgFlex" src="{% static 'img/maisonPNG.png' %}" alt="house">
+                            <div class="tilted_line"></div>
+                            <img class="imgFlex" src="{% static 'img/immeublePNG.png' %}" alt="appartment">
+                        </div>
+                    </div>   
+                </div> 
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_mutation' %}';" id="mutation">
+                    <h5>Par type de mutation</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="{% static 'img/francePNG.png' %}" alt="map">
+                        <img class="img" src="{% static 'img/transactionPNG.png' %}" alt="data">
+                    </div>  
+                </div> 
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_evolution' %}';" id="evolution">
+                    <h5>Evolution dans le temps</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="{% static 'img/francePNG.png' %}" alt="map">
+                        <img class="img" src="{% static 'img/fleche.png' %}" alt="data">
+                    </div>   
+                </div>
+                <div class="graph_type" onclick="window.location.href='{% url 'graph_externe' %}';" id="covid">
+                    <h5>Données externes</h5>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="{% static 'img/francePNG.png' %}" alt="map">
+                        <img class="img" src="{% static 'img/masquePNG.png' %}" alt="data">
+                    </div>   
+                </div>   
+            </div>
+            <div class="graph_info" id="info">
+                <div class="left">
+                    <h6>Overview des données exploitées depuis data.gouv.fr</h6>
+                    <p>Ces graphiques sont issus de DATA.GOUV.FR, certaines lignes ont été supprimées afin d'obtenir un résultat optimal. <br>Consultez le Notebook pour avoir tous les détails.</p>
+                    <p>Cliquer sur modifier pour voir les autres catégories disponibles.</p>
+                </div>
+                <div class="right">
+                    <div class="btn_change flex_align_center" onclick="modifyType()"><p>Modifier</p><div class="right_triangle"></div></div>
+                    <div class="graph_type_map">
+                        <img class="img_map" src="{% static 'img/francePNG.png' %}" alt="map">
+                        <img class="img" src="{% static 'img/data.png' %}" alt="data"> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="graph_container">
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_1' %}';">
+                <h6>Evolution des ventes cumulés</h6>
+                <div class="graph_img">
+                    <img class="img_graph" src="{% static 'img/graph_line.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_2' %}';">
+                <h6>Moyenne prix m2 par département</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_3' %}';">
+                <h6>Moyenne prix m2 par région</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_4' %}';">
+                <h6>Surface moyenne de la surface bati par departement</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_5' %}';">
+                <h6>Somme de la surface des terrains par département</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_6' %}';">
+                <h6>Top 10 des villes avec le plus de transactions</h6>
+                <div class="graph_img">
+                    <img class="img_histogram" src="{% static 'img/histogram.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_7' %}';">
+                <h6>Top 6 des noms de voies les plus utilisées</h6>
+                <div class="graph_img">
+                    <img class="img_histogram" src="{% static 'img/histogram.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_8' %}';">
+                <h6>Top 6 des noms de voies les plus utilisées pour les maisons</h6>
+                <div class="graph_img">
+                    <img class="img_histogram" src="{% static 'img/histogram.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_9' %}';">
+                <h6>Valeur foncière par département en IDF</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+            <div class="graph_bloc bg1" onclick="window.location='{% url 'graph_overview_10' %}';">
+                <h6>Valeur foncière par département en France</h6>
+                <div class="graph_img">
+                    <img class="img_france" src="{% static 'img/francePNG.png' %}" alt="graph">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
